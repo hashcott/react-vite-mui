@@ -1,9 +1,6 @@
 # Material UI - Vite.js example
 
 ## How to use
-
-Download the example [or clone the repo](https://github.com/mui/material-ui):
-
 <!-- #default-branch-switch -->
 
 ```bash
@@ -17,8 +14,6 @@ Install it and run:
 npm install
 npm run dev
 ```
-
-or:
 
 <!-- #default-branch-switch -->
 ## The idea behind the example
