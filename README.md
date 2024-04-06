@@ -7,8 +7,8 @@ Download the example [or clone the repo](https://github.com/mui/material-ui):
 <!-- #default-branch-switch -->
 
 ```bash
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/material-ui-vite
-cd material-ui-vite
+git clone https://github.com/hashcott/react-vite-mui.git
+cd react-vite-mui
 ```
 
 Install it and run:
@@ -21,11 +21,6 @@ npm run dev
 or:
 
 <!-- #default-branch-switch -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-ui-vite)
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/mui/material-ui/tree/master/examples/material-ui-vite)
-
 ## The idea behind the example
 
 This example uses [Vite.js](https://github.com/vitejs/vite).
