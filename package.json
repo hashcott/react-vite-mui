@@ -1,22 +1,22 @@
 {
-  "name": "material-ui-vite",
-  "version": "5.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "VITE_CJS_IGNORE_WARNING=true vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "dependencies": {
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@mui/material": "latest",
-    "ethers": "^6.11.1",
-    "react": "latest",
-    "react-dom": "latest"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest"
-  }
+	"name": "material-ui-vite",
+	"version": "5.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "VITE_CJS_IGNORE_WARNING=true vite",
+		"build": "vite build",
+		"serve": "vite preview"
+	},
+	"dependencies": {
+		"@emotion/react": "latest",
+		"@emotion/styled": "latest",
+		"@mui/material": "latest",
+		"ethers": "5.7.2",
+		"react": "latest",
+		"react-dom": "latest"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-react": "latest",
+		"vite": "latest"
+	}
 }

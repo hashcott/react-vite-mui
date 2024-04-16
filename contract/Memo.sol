@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Compatible with OpenZeppelin Contracts ^5.0.0
-pragma solidity ^0.8.25;
+pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -21,17 +21,13 @@ contract MEMO is ERC20, Ownable {
         return priceOfToken;
     }
 
-    function buyToken(uint256 amount) public {
-        require(amount > 1, "Minimun 1 MEMO");
-        uint256 total = amount * priceOfToken;
+    function buyToken() public payable  {
+        require(msg.value >= 100000000000000 wei, "Minimun 1 MEMO");
 
-        // payment to contract
-        bool sent = payable (address(this)).send(total);
-        require(sent, "Payment error");
+        uint256 amount = msg.value * 1e18 / priceOfToken;
 
         // transfer token to buyer
         // msg.sender : nguoi dung
-        address to = msg.sender;
 
         // chuyen tu contract to buyer
 
@@ -39,12 +35,12 @@ contract MEMO is ERC20, Ownable {
         // msg.sender trong một function được gọi ở một function khác thì
         // msg.sender : là contract address
         // customTransfer(address(this),to, amount);
-
-        transfer(to, amount);
+        transfer(address(this),msg.sender, amount);
     }
 
-    function customTransfer(address _from, address _to, uint256 _amount) private returns (bool) {
-        _transfer(_from, _to, _amount);
+    function transfer(address from, address to, uint256 value) public virtual returns (bool) {
+        // msg.sender => contract (this)
+        _transfer(from, to, value);
         return true;
     }
 
@@ -61,7 +57,7 @@ contract MEMO is ERC20, Ownable {
         // transfer
         // msg.sender trong một function được gọi ở một function khác thì
         // msg.sender : là contract address
-        bool transfered = customTransfer(msg.sender,contractAddress, amount);
+        bool transfered = transfer(msg.sender,contractAddress, amount);
         require(transfered);
 
         bool sent = payable (msg.sender).send(total);
